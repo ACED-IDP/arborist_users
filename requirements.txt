@@ -1,0 +1,4 @@
+gen3users~=1.0.2
+click~=8.1.7
+setuptools==69.0.2
+PyYAML~=6.0.1
