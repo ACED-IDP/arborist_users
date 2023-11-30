@@ -72,9 +72,14 @@ def extract():
 
     pods = _get_pods()
     arborist = _get_pod("arborist-deployment", pods)
-    pathlib.Path(context).mkdir(parents=True, exist_ok=True)
-    _save_arborist_configurations(context, arborist['metadata']['name'])
-
+    container_statuses = arborist.get('status', {}).get('containerStatuses', [])
+    ready = all([_.get('ready', False) for _ in container_statuses])
+    state = list([list(_.get('state', {}).keys())[0] for _ in container_statuses])[0]
+    if ready:
+        pathlib.Path(f"DATA/{context}").mkdir(parents=True, exist_ok=True)
+        _save_arborist_configurations(context, arborist['metadata']['name'])
+    else:
+        print(f"  {arborist['metadata']['name']} is not ready. state: {state}")
 
 @cli.command('transform')
 def transform():
@@ -126,7 +131,7 @@ def transform():
     # see https://github.com/uc-cdis/fence/blob/master/docs/user.yaml_guide.md
     file_name = f"DATA/{context}/user.yaml"
     with open(file_name, "w") as f:
-        print(f"# Created {datetime.now()}", file=f)
+        print(f"# Created by arborist_users at {datetime.now()} from {context}", file=f)
         yaml.dump(data=user_yaml, stream=f, sort_keys=True)
         print(f"  Saved {file_name}")
 
