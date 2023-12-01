@@ -1,0 +1,270 @@
+{
+  "policies": [
+    {
+      "id": "workspace",
+      "description": "be able to use workspace",
+      "resource_paths": [
+        "/workspace"
+      ],
+      "role_ids": [
+        "administrator",
+        "reader",
+        "workspace_user",
+        "writer"
+      ]
+    },
+    {
+      "id": "data_upload",
+      "description": "upload raw data files to S3",
+      "resource_paths": [
+        "/data_file"
+      ],
+      "role_ids": [
+        "administrator",
+        "writer"
+      ]
+    },
+    {
+      "id": "services.sheepdog-admin",
+      "description": "CRUD access to programs and projects",
+      "resource_paths": [
+        "/services/sheepdog/submission/program",
+        "/services/sheepdog/submission/project"
+      ],
+      "role_ids": [
+        "administrator"
+      ]
+    },
+    {
+      "id": "indexd_admin",
+      "description": "full access to indexd API",
+      "resource_paths": [
+        "/data_file",
+        "/programs"
+      ],
+      "role_ids": [
+        "administrator"
+      ]
+    },
+    {
+      "id": "open_data_reader",
+      "description": "",
+      "resource_paths": [
+        "/programs/test/projects/Prostate_Cancer"
+      ],
+      "role_ids": [
+        "reader",
+        "storage_reader"
+      ]
+    },
+    {
+      "id": "all_programs_reader",
+      "description": "",
+      "resource_paths": [
+        "/programs"
+      ],
+      "role_ids": [
+        "reader",
+        "storage_reader"
+      ]
+    },
+    {
+      "id": "test_submitter",
+      "description": "",
+      "resource_paths": [
+        "/programs/test/projects/Alcoholism",
+        "/programs/test/projects/Alzheimers",
+        "/programs/test/projects/Breast_Cancer",
+        "/programs/test/projects/Colon_Cancer",
+        "/programs/test/projects/Diabetes"
+      ],
+      "role_ids": [
+        "creator",
+        "deleter",
+        "reader",
+        "storage_reader",
+        "storage_writer",
+        "updater"
+      ]
+    },
+    {
+      "id": "test_reader",
+      "description": "",
+      "resource_paths": [
+        "/programs/test/projects/Alzheimers",
+        "/programs/test/projects/Breast_Cancer",
+        "/programs/test/projects/Colon_Cancer",
+        "/programs/test/projects/Diabetes",
+        "/programs/test/projects/Lung_Cancer"
+      ],
+      "role_ids": [
+        "reader",
+        "storage_reader"
+      ]
+    },
+    {
+      "id": "test_embargo",
+      "description": "",
+      "resource_paths": [
+        "/programs/test/projects/Alcoholism"
+      ],
+      "role_ids": [
+        "reader",
+        "storage_reader"
+      ]
+    },
+    {
+      "id": "requestor_creator",
+      "description": "Allows requesting access to any resource under programs, sower, data_file",
+      "resource_paths": [
+        "/data_file",
+        "/programs",
+        "/sower"
+      ],
+      "role_ids": [
+        "requestor_creator_role"
+      ]
+    },
+    {
+      "id": "requestor_updater",
+      "description": "Allows approving access to any resource under programs, sower, data_file",
+      "resource_paths": [
+        "/data_file",
+        "/programs",
+        "/sower"
+      ],
+      "role_ids": [
+        "requestor_updater_role"
+      ]
+    },
+    {
+      "id": "requestor_reader",
+      "description": "",
+      "resource_paths": [
+        "/programs"
+      ],
+      "role_ids": [
+        "requestor_reader_role"
+      ]
+    },
+    {
+      "id": "programs.test.projects.Alzheimers_creator_updater_deleter_storage_writer",
+      "description": "policy created by requestor",
+      "resource_paths": [
+        "/programs/test/projects/Alzheimers"
+      ],
+      "role_ids": [
+        "creator",
+        "deleter",
+        "storage_writer",
+        "updater"
+      ]
+    },
+    {
+      "id": "programs.test.projects.Alzheimers_reader_storage_reader",
+      "description": "policy created by requestor",
+      "resource_paths": [
+        "/programs/test/projects/Alzheimers"
+      ],
+      "role_ids": [
+        "reader",
+        "storage_reader"
+      ]
+    },
+    {
+      "id": "programs.test.projects.Alcoholism_accessor",
+      "description": "policy created by requestor",
+      "resource_paths": [
+        "/programs/test/projects/Alcoholism"
+      ],
+      "role_ids": [
+        "fence_storage_reader",
+        "guppy_reader",
+        "peregrine_reader"
+      ]
+    },
+    {
+      "id": "programs.test.projects.Alcoholism_storage_writer_file_uploader",
+      "description": "policy created by requestor",
+      "resource_paths": [
+        "/programs/test/projects/Alcoholism"
+      ],
+      "role_ids": [
+        "file_uploader",
+        "storage_writer"
+      ]
+    },
+    {
+      "id": "test_requestor_updater",
+      "description": "Allows approving access to any resource under \"/programs/test\"",
+      "resource_paths": [
+        "/programs/test"
+      ],
+      "role_ids": [
+        "requestor_updater_role"
+      ]
+    },
+    {
+      "id": "test2_requestor_updater",
+      "description": "Allows approving access to any resource under \"/programs/test2\"",
+      "resource_paths": [
+        "/programs/test2"
+      ],
+      "role_ids": [
+        "requestor_updater_role"
+      ]
+    },
+    {
+      "id": "test3_requestor_updater",
+      "description": "Allows approving access to any resource under \"/programs/test3\"",
+      "resource_paths": [
+        "/programs/test3"
+      ],
+      "role_ids": [
+        "requestor_updater_role"
+      ]
+    },
+    {
+      "id": "test4_requestor_updater",
+      "description": "Allows approving access to any resource under \"/programs/test4\"",
+      "resource_paths": [
+        "/programs/test4"
+      ],
+      "role_ids": [
+        "requestor_updater_role"
+      ]
+    },
+    {
+      "id": "sower",
+      "description": "be able to use sower job",
+      "resource_paths": [
+        "/sower"
+      ],
+      "role_ids": [
+        "sower_user"
+      ]
+    },
+    {
+      "id": "programs.test.projects.Alzheimers_writer",
+      "description": "policy created by requestor",
+      "resource_paths": [
+        "/data_file",
+        "/programs/test/projects/Alzheimers",
+        "/sower"
+      ],
+      "role_ids": [
+        "writer"
+      ]
+    },
+    {
+      "id": "programs.test.projects.Alzheimers_reader",
+      "description": "policy created by requestor",
+      "resource_paths": [
+        "/programs/test/projects/Alzheimers"
+      ],
+      "role_ids": [
+        "reader"
+      ]
+    }
+  ]
+}

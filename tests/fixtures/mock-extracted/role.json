@@ -1,0 +1,385 @@
+{
+  "roles": [
+    {
+      "id": "indexd_admin",
+      "description": "",
+      "permissions": [
+        {
+          "id": "indexd_admin",
+          "description": "",
+          "action": {
+            "service": "indexd",
+            "method": "*"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "fence_storage_reader",
+      "description": "",
+      "permissions": [
+        {
+          "id": "storage_reader",
+          "description": "",
+          "action": {
+            "service": "fence",
+            "method": "read-storage"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "guppy_reader",
+      "description": "",
+      "permissions": [
+        {
+          "id": "reader",
+          "description": "",
+          "action": {
+            "service": "guppy",
+            "method": "read"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "peregrine_reader",
+      "description": "",
+      "permissions": [
+        {
+          "id": "reader",
+          "description": "",
+          "action": {
+            "service": "peregrine",
+            "method": "read"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "requestor_reader_role",
+      "description": "",
+      "permissions": [
+        {
+          "id": "requestor_reader_action",
+          "description": "",
+          "action": {
+            "service": "requestor",
+            "method": "read"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "sheepdog_admin",
+      "description": "",
+      "permissions": [
+        {
+          "id": "sheepdog_admin_action",
+          "description": "",
+          "action": {
+            "service": "sheepdog",
+            "method": "*"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "requestor_updater_role",
+      "description": "",
+      "permissions": [
+        {
+          "id": "requestor_updater_action",
+          "description": "",
+          "action": {
+            "service": "requestor",
+            "method": "update"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "reader",
+      "description": "",
+      "permissions": [
+        {
+          "id": "storage_reader",
+          "description": "",
+          "action": {
+            "service": "*",
+            "method": "read-storage"
+          },
+          "constraints": {}
+        },
+        {
+          "id": "reader",
+          "description": "",
+          "action": {
+            "service": "*",
+            "method": "read"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "storage_writer",
+      "description": "",
+      "permissions": [
+        {
+          "id": "storage_creator",
+          "description": "",
+          "action": {
+            "service": "*",
+            "method": "write-storage"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "deleter",
+      "description": "",
+      "permissions": [
+        {
+          "id": "deleter",
+          "description": "",
+          "action": {
+            "service": "*",
+            "method": "delete"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "file_uploader",
+      "description": "",
+      "permissions": [
+        {
+          "id": "file_upload",
+          "description": "",
+          "action": {
+            "service": "fence",
+            "method": "file_upload"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "writer",
+      "description": "",
+      "permissions": [
+        {
+          "id": "file_upload",
+          "description": "",
+          "action": {
+            "service": "fence",
+            "method": "file_upload"
+          },
+          "constraints": {}
+        },
+        {
+          "id": "storage_writer",
+          "description": "",
+          "action": {
+            "service": "fence",
+            "method": "write-storage"
+          },
+          "constraints": {}
+        },
+        {
+          "id": "storage_creator",
+          "description": "",
+          "action": {
+            "service": "fence",
+            "method": "create"
+          },
+          "constraints": {}
+        },
+        {
+          "id": "creator",
+          "description": "",
+          "action": {
+            "service": "*",
+            "method": "create"
+          },
+          "constraints": {}
+        },
+        {
+          "id": "updater",
+          "description": "",
+          "action": {
+            "service": "*",
+            "method": "update"
+          },
+          "constraints": {}
+        },
+        {
+          "id": "deleter",
+          "description": "",
+          "action": {
+            "service": "*",
+            "method": "delete"
+          },
+          "constraints": {}
+        },
+        {
+          "id": "sower_access",
+          "description": "",
+          "action": {
+            "service": "job",
+            "method": "access"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "admin",
+      "description": "",
+      "permissions": [
+        {
+          "id": "admin",
+          "description": "",
+          "action": {
+            "service": "*",
+            "method": "*"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "administrator",
+      "description": "",
+      "permissions": [
+        {
+          "id": "all",
+          "description": "",
+          "action": {
+            "service": "*",
+            "method": "*"
+          },
+          "constraints": {}
+        },
+        {
+          "id": "sheepdog_admin_action",
+          "description": "",
+          "action": {
+            "service": "sheepdog",
+            "method": "*"
+          },
+          "constraints": {}
+        },
+        {
+          "id": "indexd_admin",
+          "description": "",
+          "action": {
+            "service": "indexd",
+            "method": "*"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "workspace_user",
+      "description": "",
+      "permissions": [
+        {
+          "id": "workspace_access",
+          "description": "",
+          "action": {
+            "service": "jupyterhub",
+            "method": "access"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "sower_user",
+      "description": "",
+      "permissions": [
+        {
+          "id": "sower_access",
+          "description": "",
+          "action": {
+            "service": "job",
+            "method": "access"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "creator",
+      "description": "",
+      "permissions": [
+        {
+          "id": "creator",
+          "description": "",
+          "action": {
+            "service": "*",
+            "method": "create"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "requestor_creator_role",
+      "description": "",
+      "permissions": [
+        {
+          "id": "requestor_creator_action",
+          "description": "",
+          "action": {
+            "service": "requestor",
+            "method": "create"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "storage_reader",
+      "description": "",
+      "permissions": [
+        {
+          "id": "storage_reader",
+          "description": "",
+          "action": {
+            "service": "*",
+            "method": "read-storage"
+          },
+          "constraints": {}
+        }
+      ]
+    },
+    {
+      "id": "updater",
+      "description": "",
+      "permissions": [
+        {
+          "id": "updater",
+          "description": "",
+          "action": {
+            "service": "*",
+            "method": "update"
+          },
+          "constraints": {}
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "anonymous",
+      "users": [],
+      "policies": []
+    },
+    {
+      "name": "logged-in",
+      "users": [],
+      "policies": [
+        "requestor_creator"
+      ]
+    },
+    {
+      "name": "administrators",
+      "users": [
+        "tom@example.edu"
+      ],
+      "policies": [
+        "data_upload",
+        "indexd_admin",
+        "requestor_creator",
+        "requestor_reader",
+        "requestor_updater",
+        "services.sheepdog-admin",
+        "sower",
+        "workspace"
+      ]
+    }
+  ]
+}

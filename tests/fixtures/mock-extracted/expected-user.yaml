@@ -1,0 +1,506 @@
+# Created by arborist_users at 2023-12-01 14:51:03.357025 from mock-extracted
+authz:
+  all_users_policies: []
+  anonymous_policies: []
+  groups:
+  - name: anonymous
+    policies: []
+    users: []
+  - name: logged-in
+    policies:
+    - requestor_creator
+    users: []
+  - name: administrators
+    policies:
+    - data_upload
+    - indexd_admin
+    - requestor_creator
+    - requestor_reader
+    - requestor_updater
+    - services.sheepdog-admin
+    - sower
+    - workspace
+    users:
+    - tom@example.edu
+  policies:
+  - description: be able to use workspace
+    id: workspace
+    resource_paths:
+    - /workspace
+    role_ids:
+    - administrator
+    - reader
+    - workspace_user
+    - writer
+  - description: upload raw data files to S3
+    id: data_upload
+    resource_paths:
+    - /data_file
+    role_ids:
+    - administrator
+    - writer
+  - description: CRUD access to programs and projects
+    id: services.sheepdog-admin
+    resource_paths:
+    - /services/sheepdog/submission/program
+    - /services/sheepdog/submission/project
+    role_ids:
+    - administrator
+  - description: full access to indexd API
+    id: indexd_admin
+    resource_paths:
+    - /data_file
+    - /programs
+    role_ids:
+    - administrator
+  - description: ''
+    id: open_data_reader
+    resource_paths:
+    - /programs/test/projects/Prostate_Cancer
+    role_ids:
+    - reader
+    - storage_reader
+  - description: ''
+    id: all_programs_reader
+    resource_paths:
+    - /programs
+    role_ids:
+    - reader
+    - storage_reader
+  - description: ''
+    id: test_submitter
+    resource_paths:
+    - /programs/test/projects/Alcoholism
+    - /programs/test/projects/Alzheimers
+    - /programs/test/projects/Breast_Cancer
+    - /programs/test/projects/Colon_Cancer
+    - /programs/test/projects/Diabetes
+    role_ids:
+    - creator
+    - deleter
+    - reader
+    - storage_reader
+    - storage_writer
+    - updater
+  - description: ''
+    id: test_reader
+    resource_paths:
+    - /programs/test/projects/Alzheimers
+    - /programs/test/projects/Breast_Cancer
+    - /programs/test/projects/Colon_Cancer
+    - /programs/test/projects/Diabetes
+    - /programs/test/projects/Lung_Cancer
+    role_ids:
+    - reader
+    - storage_reader
+  - description: ''
+    id: test_embargo
+    resource_paths:
+    - /programs/test/projects/Alcoholism
+    role_ids:
+    - reader
+    - storage_reader
+  - description: Allows requesting access to any resource under programs, sower, data_file
+    id: requestor_creator
+    resource_paths:
+    - /data_file
+    - /programs
+    - /sower
+    role_ids:
+    - requestor_creator_role
+  - description: Allows approving access to any resource under programs, sower, data_file
+    id: requestor_updater
+    resource_paths:
+    - /data_file
+    - /programs
+    - /sower
+    role_ids:
+    - requestor_updater_role
+  - description: ''
+    id: requestor_reader
+    resource_paths:
+    - /programs
+    role_ids:
+    - requestor_reader_role
+  - description: policy created by requestor
+    id: programs.test.projects.Alzheimers_creator_updater_deleter_storage_writer
+    resource_paths:
+    - /programs/test/projects/Alzheimers
+    role_ids:
+    - creator
+    - deleter
+    - storage_writer
+    - updater
+  - description: policy created by requestor
+    id: programs.test.projects.Alzheimers_reader_storage_reader
+    resource_paths:
+    - /programs/test/projects/Alzheimers
+    role_ids:
+    - reader
+    - storage_reader
+  - description: policy created by requestor
+    id: programs.test.projects.Alcoholism_accessor
+    resource_paths:
+    - /programs/test/projects/Alcoholism
+    role_ids:
+    - fence_storage_reader
+    - guppy_reader
+    - peregrine_reader
+  - description: policy created by requestor
+    id: programs.test.projects.Alcoholism_storage_writer_file_uploader
+    resource_paths:
+    - /programs/test/projects/Alcoholism
+    role_ids:
+    - file_uploader
+    - storage_writer
+  - description: Allows approving access to any resource under "/programs/test"
+    id: test_requestor_updater
+    resource_paths:
+    - /programs/test
+    role_ids:
+    - requestor_updater_role
+  - description: Allows approving access to any resource under "/programs/test2"
+    id: test2_requestor_updater
+    resource_paths:
+    - /programs/test2
+    role_ids:
+    - requestor_updater_role
+  - description: Allows approving access to any resource under "/programs/test3"
+    id: test3_requestor_updater
+    resource_paths:
+    - /programs/test3
+    role_ids:
+    - requestor_updater_role
+  - description: Allows approving access to any resource under "/programs/test4"
+    id: test4_requestor_updater
+    resource_paths:
+    - /programs/test4
+    role_ids:
+    - requestor_updater_role
+  - description: be able to use sower job
+    id: sower
+    resource_paths:
+    - /sower
+    role_ids:
+    - sower_user
+  - description: policy created by requestor
+    id: programs.test.projects.Alzheimers_writer
+    resource_paths:
+    - /data_file
+    - /programs/test/projects/Alzheimers
+    - /sower
+    role_ids:
+    - writer
+  - description: policy created by requestor
+    id: programs.test.projects.Alzheimers_reader
+    resource_paths:
+    - /programs/test/projects/Alzheimers
+    role_ids:
+    - reader
+  resources:
+  - name: programs
+    subresources:
+    - name: test4
+      subresources:
+      - name: projects
+        subresources: []
+    - name: test3
+      subresources:
+      - name: projects
+        subresources: []
+    - name: test5
+      subresources:
+      - name: projects
+        subresources: []
+    - name: test
+      subresources:
+      - name: projects
+        subresources:
+        - name: Colon_Cancer
+          subresources: []
+        - name: Alcoholism
+          subresources: []
+        - name: HOP
+          subresources: []
+        - name: eimages
+          subresources: []
+        - name: MCF10A
+          subresources: []
+        - name: Breast_Cancer
+          subresources: []
+        - name: Lung_Cancer
+          subresources: []
+        - name: NVIDIA
+          subresources: []
+        - name: Alzheimers
+          subresources: []
+        - name: Prostate_Cancer
+          subresources: []
+        - name: Diabetes
+          subresources: []
+    - name: test2
+      subresources:
+      - name: projects
+        subresources: []
+  - name: services
+    subresources:
+    - name: sheepdog
+      subresources:
+      - name: submission
+        subresources:
+        - name: project
+          subresources: []
+        - name: program
+          subresources: []
+  - name: workspace
+    subresources: []
+  - name: sower
+    subresources: []
+  - name: data_file
+    subresources: []
+  - name: open
+    subresources: []
+  roles:
+  - description: ''
+    id: indexd_admin
+    permissions:
+    - action:
+        method: '*'
+        service: indexd
+      constraints: {}
+      description: ''
+      id: indexd_admin
+  - description: ''
+    id: fence_storage_reader
+    permissions:
+    - action:
+        method: read-storage
+        service: fence
+      constraints: {}
+      description: ''
+      id: storage_reader
+  - description: ''
+    id: guppy_reader
+    permissions:
+    - action:
+        method: read
+        service: guppy
+      constraints: {}
+      description: ''
+      id: reader
+  - description: ''
+    id: peregrine_reader
+    permissions:
+    - action:
+        method: read
+        service: peregrine
+      constraints: {}
+      description: ''
+      id: reader
+  - description: ''
+    id: requestor_reader_role
+    permissions:
+    - action:
+        method: read
+        service: requestor
+      constraints: {}
+      description: ''
+      id: requestor_reader_action
+  - description: ''
+    id: sheepdog_admin
+    permissions:
+    - action:
+        method: '*'
+        service: sheepdog
+      constraints: {}
+      description: ''
+      id: sheepdog_admin_action
+  - description: ''
+    id: requestor_updater_role
+    permissions:
+    - action:
+        method: update
+        service: requestor
+      constraints: {}
+      description: ''
+      id: requestor_updater_action
+  - description: ''
+    id: reader
+    permissions:
+    - action:
+        method: read-storage
+        service: '*'
+      constraints: {}
+      description: ''
+      id: storage_reader
+    - action:
+        method: read
+        service: '*'
+      constraints: {}
+      description: ''
+      id: reader
+  - description: ''
+    id: storage_writer
+    permissions:
+    - action:
+        method: write-storage
+        service: '*'
+      constraints: {}
+      description: ''
+      id: storage_creator
+  - description: ''
+    id: deleter
+    permissions:
+    - action:
+        method: delete
+        service: '*'
+      constraints: {}
+      description: ''
+      id: deleter
+  - description: ''
+    id: file_uploader
+    permissions:
+    - action:
+        method: file_upload
+        service: fence
+      constraints: {}
+      description: ''
+      id: file_upload
+  - description: ''
+    id: writer
+    permissions:
+    - action:
+        method: file_upload
+        service: fence
+      constraints: {}
+      description: ''
+      id: file_upload
+    - action:
+        method: write-storage
+        service: fence
+      constraints: {}
+      description: ''
+      id: storage_writer
+    - action:
+        method: create
+        service: fence
+      constraints: {}
+      description: ''
+      id: storage_creator
+    - action:
+        method: create
+        service: '*'
+      constraints: {}
+      description: ''
+      id: creator
+    - action:
+        method: update
+        service: '*'
+      constraints: {}
+      description: ''
+      id: updater
+    - action:
+        method: delete
+        service: '*'
+      constraints: {}
+      description: ''
+      id: deleter
+    - action:
+        method: access
+        service: job
+      constraints: {}
+      description: ''
+      id: sower_access
+  - description: ''
+    id: admin
+    permissions:
+    - action:
+        method: '*'
+        service: '*'
+      constraints: {}
+      description: ''
+      id: admin
+  - description: ''
+    id: administrator
+    permissions:
+    - action:
+        method: '*'
+        service: '*'
+      constraints: {}
+      description: ''
+      id: all
+    - action:
+        method: '*'
+        service: sheepdog
+      constraints: {}
+      description: ''
+      id: sheepdog_admin_action
+    - action:
+        method: '*'
+        service: indexd
+      constraints: {}
+      description: ''
+      id: indexd_admin
+  - description: ''
+    id: workspace_user
+    permissions:
+    - action:
+        method: access
+        service: jupyterhub
+      constraints: {}
+      description: ''
+      id: workspace_access
+  - description: ''
+    id: sower_user
+    permissions:
+    - action:
+        method: access
+        service: job
+      constraints: {}
+      description: ''
+      id: sower_access
+  - description: ''
+    id: creator
+    permissions:
+    - action:
+        method: create
+        service: '*'
+      constraints: {}
+      description: ''
+      id: creator
+  - description: ''
+    id: requestor_creator_role
+    permissions:
+    - action:
+        method: create
+        service: requestor
+      constraints: {}
+      description: ''
+      id: requestor_creator_action
+  - description: ''
+    id: storage_reader
+    permissions:
+    - action:
+        method: read-storage
+        service: '*'
+      constraints: {}
+      description: ''
+      id: storage_reader
+  - description: ''
+    id: updater
+    permissions:
+    - action:
+        method: update
+        service: '*'
+      constraints: {}
+      description: ''
+      id: updater
+clients:
+  wts:
+    policies: []
+users:
+  tom@example.edu:
+    policies:
+    - programs.test.projects.Alzheimers_creator_updater_deleter_storage_writer
+    - programs.test.projects.Alzheimers_reader_storage_reader
+    tags: {}
