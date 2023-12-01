@@ -1,0 +1,257 @@
+{
+  "resources": [
+    {
+      "name": "projects",
+      "path": "/programs/test4/projects",
+      "tag": "ZjOMnLo9",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "projects",
+      "path": "/programs/test3/projects",
+      "tag": "eTzZsUzH",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "sheepdog",
+      "path": "/services/sheepdog",
+      "tag": "3VCXf8zU",
+      "description": "",
+      "subresources": [
+        "/services/sheepdog/submission"
+      ]
+    },
+    {
+      "name": "test5",
+      "path": "/programs/test5",
+      "tag": "kqCTa0ke",
+      "description": "",
+      "subresources": [
+        "/programs/test5/projects"
+      ]
+    },
+    {
+      "name": "test",
+      "path": "/programs/test",
+      "tag": "wZjNWCVC",
+      "description": "",
+      "subresources": [
+        "/programs/test/projects"
+      ]
+    },
+    {
+      "name": "programs",
+      "path": "/programs",
+      "tag": "0aIxYpZM",
+      "description": "",
+      "subresources": [
+        "/programs/test",
+        "/programs/test2",
+        "/programs/test3",
+        "/programs/test4",
+        "/programs/test5"
+      ]
+    },
+    {
+      "name": "project",
+      "path": "/services/sheepdog/submission/project",
+      "tag": "n180qMrs",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "test2",
+      "path": "/programs/test2",
+      "tag": "5F90xcYw",
+      "description": "",
+      "subresources": [
+        "/programs/test2/projects"
+      ]
+    },
+    {
+      "name": "test4",
+      "path": "/programs/test4",
+      "tag": "JtlBCVtD",
+      "description": "",
+      "subresources": [
+        "/programs/test4/projects"
+      ]
+    },
+    {
+      "name": "Colon_Cancer",
+      "path": "/programs/test/projects/Colon_Cancer",
+      "tag": "mj1uLhav",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "program",
+      "path": "/services/sheepdog/submission/program",
+      "tag": "EHw8oJ49",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "Alcoholism",
+      "path": "/programs/test/projects/Alcoholism",
+      "tag": "8WF1Z1mz",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "test3",
+      "path": "/programs/test3",
+      "tag": "MDP60MTl",
+      "description": "",
+      "subresources": [
+        "/programs/test3/projects"
+      ]
+    },
+    {
+      "name": "projects",
+      "path": "/programs/test5/projects",
+      "tag": "WEZXo9UN",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "HOP",
+      "path": "/programs/test/projects/HOP",
+      "tag": "-Zb9QE4o",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "eimages",
+      "path": "/programs/test/projects/eimages",
+      "tag": "iWHlwDe8",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "projects",
+      "path": "/programs/test2/projects",
+      "tag": "UzojEzvr",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "MCF10A",
+      "path": "/programs/test/projects/MCF10A",
+      "tag": "5x_prii_",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "Breast_Cancer",
+      "path": "/programs/test/projects/Breast_Cancer",
+      "tag": "9y3Y4_-M",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "services",
+      "path": "/services",
+      "tag": "EJdtKMXf",
+      "description": "",
+      "subresources": [
+        "/services/sheepdog"
+      ]
+    },
+    {
+      "name": "Lung_Cancer",
+      "path": "/programs/test/projects/Lung_Cancer",
+      "tag": "pTfzJ2yO",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "NVIDIA",
+      "path": "/programs/test/projects/NVIDIA",
+      "tag": "-uFZVLPf",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "Alzheimers",
+      "path": "/programs/test/projects/Alzheimers",
+      "tag": "Dp_B9gk0",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "workspace",
+      "path": "/workspace",
+      "tag": "7c9Q1FdJ",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "sower",
+      "path": "/sower",
+      "tag": "HdYg2D51",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "submission",
+      "path": "/services/sheepdog/submission",
+      "tag": "2EWq-oes",
+      "description": "",
+      "subresources": [
+        "/services/sheepdog/submission/program",
+        "/services/sheepdog/submission/project"
+      ]
+    },
+    {
+      "name": "Prostate_Cancer",
+      "path": "/programs/test/projects/Prostate_Cancer",
+      "tag": "RepYOiI3",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "data_file",
+      "path": "/data_file",
+      "tag": "YPMDUCSx",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "Diabetes",
+      "path": "/programs/test/projects/Diabetes",
+      "tag": "Q870DWo3",
+      "description": "",
+      "subresources": []
+    },
+    {
+      "name": "projects",
+      "path": "/programs/test/projects",
+      "tag": "h60OYjLL",
+      "description": "",
+      "subresources": [
+        "/programs/test/projects/Alcoholism",
+        "/programs/test/projects/Alzheimers",
+        "/programs/test/projects/Breast_Cancer",
+        "/programs/test/projects/Colon_Cancer",
+        "/programs/test/projects/Diabetes",
+        "/programs/test/projects/Lung_Cancer",
+        "/programs/test/projects/Prostate_Cancer",
+        "/programs/test/projects/HOP",
+        "/programs/test/projects/NVIDIA",
+        "/programs/test/projects/MCF10A",
+        "/programs/test/projects/eimages",
+        "/programs/test/projects/TEST_c5758f76_04cf_49b6_8d48_6fe79f4b0adc"
+      ]
+    },
+    {
+      "name": "open",
+      "path": "/open",
+      "tag": "EunOIK84",
+      "description": "",
+      "subresources": []
+    }
+  ]
+}

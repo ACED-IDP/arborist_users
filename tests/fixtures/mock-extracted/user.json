@@ -1,0 +1,20 @@
+{
+  "users": [
+    {
+      "name": "tom@example.edu",
+      "groups": [
+        "administrators"
+      ],
+      "policies": [
+        {
+          "policy": "programs.test.projects.Alzheimers_creator_updater_deleter_storage_writer",
+          "expires_at": null
+        },
+        {
+          "policy": "programs.test.projects.Alzheimers_reader_storage_reader",
+          "expires_at": null
+        }
+      ]
+    }
+  ]
+}
