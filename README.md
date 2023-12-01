@@ -39,7 +39,7 @@ Options:
   --help  Show this message and exit.
 
 Commands:
-  extract    Extract to DATA/{context}/{entity}.yaml
+  extract    Extract to DATA/{context}/{entity}.json
   transform  Transform arborist information into DATA/{context}/user.yaml...
   pods       Show information about current k8s context.
   ping       Verify kubectl and context.

@@ -66,7 +66,7 @@ def cli():
 
 @cli.command('extract')
 def extract():
-    """Extract to DATA/{context}/{entity}.yaml"""
+    """Extract to DATA/{context}/{entity}.json"""
     context = _get_context()
     print(f"Retrieving arborist information from context: {context}")
 
@@ -80,6 +80,7 @@ def extract():
         _save_arborist_configurations(context, arborist['metadata']['name'])
     else:
         print(f"  {arborist['metadata']['name']} is not ready. state: {state}")
+
 
 @cli.command('transform')
 def transform():
