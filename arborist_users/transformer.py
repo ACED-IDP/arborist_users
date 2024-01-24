@@ -58,6 +58,11 @@ def transform(context: str, directory: str = 'DATA') -> dict:
     with open(f"{directory}/{context}/group.json", "r") as f:
         groups = json.load(f)['groups']
         authz['groups'] = groups
+        for _ in groups:
+            if _['name'] == 'anonymous':
+                authz['anonymous_policies'] = [p for p in _['policies']]
+            if _['name'] == 'logged-in':
+                authz['all_users_policies'] = [p for p in _['policies']]
 
     with open(f"{directory}/{context}/user.json", "r") as f:
         users = json.load(f)['users']
