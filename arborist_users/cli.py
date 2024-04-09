@@ -52,6 +52,17 @@ def _transform(directory: str):
     print(f"  Validated {file_name}")
 
 
+@cli.command('validate')
+@click.option('--directory', default='DATA', help='Directory to save user.yaml', show_default=True)
+def _validate(directory: str):
+    try:
+        file_name = f"{directory}/{_get_context()}/user.yaml"
+        validate(file_name)
+        print(f"  Validated {file_name}")
+    except Exception as e:
+        print(f"  {e}")
+
+
 @cli.command('pods')
 def _pods():
     """Show information about current k8s context."""
