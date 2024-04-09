@@ -53,12 +53,12 @@ def _transform(directory: str):
 
 
 @cli.command('validate')
-@click.option('--directory', default='DATA', help='Directory to save user.yaml', show_default=True)
-def _validate(directory: str):
+@click.argument('path', type=click.Path(exists=True), required=True)
+def _validate(path: str):
+    """Validate user.yaml file."""
     try:
-        file_name = f"{directory}/{_get_context()}/user.yaml"
-        validate(file_name)
-        print(f"  Validated {file_name}")
+        validate(path)
+        print(f"  Validated {path}")
     except Exception as e:
         print(f"  {e}")
 
