@@ -41,7 +41,7 @@ Options:
 Commands:
   extract    Extract to DATA/{context}/{entity}.json
   transform  Transform arborist information into DATA/{context}/user.yaml...
-  pods       Show information about current k8s context.
+  validate   Validate user.yaml file.
   ping       Verify kubectl and context.
 
 ```

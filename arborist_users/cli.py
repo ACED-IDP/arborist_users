@@ -5,7 +5,7 @@ import yaml
 
 from arborist_users import _get_context, _get_pods, _run_command
 from arborist_users.extractor import extract
-from arborist_users.transformer import transform, save, validate
+from arborist_users.transformer import transform, validate, save_user_yaml, transform_requestor, save_requestor_sh
 
 
 class NaturalOrderGroup(click.Group):
@@ -45,11 +45,15 @@ def _transform(directory: str):
     print(f"Transforming arborist information from k8s context: {context}")
     user_yaml = transform(context, directory=directory)
 
-    file_name = save(user_yaml, context, directory)
+    file_name = save_user_yaml(user_yaml, context, directory)
     print(f"  Saved {file_name}")
 
     validate(file_name)
     print(f"  Validated {file_name}")
+
+    requestor_yaml = transform_requestor(context, directory=directory)
+    file_name = save_requestor_sh(requestor_yaml, context, directory)
+    print(f"  Saved {file_name}")
 
 
 @cli.command('validate')
@@ -61,39 +65,6 @@ def _validate(path: str):
         print(f"  Validated {path}")
     except Exception as e:
         print(f"  {e}")
-
-
-@cli.command('pods')
-def _pods():
-    """Show information about current k8s context."""
-    pods = _get_pods()
-    pod_summaries = {}
-    warnings = []
-    for _ in pods['items']:
-        app = _.get('metadata', {}).get('labels', {}).get('app', '')
-        name = _.get('metadata', {}).get('name', '')
-        if app == '':
-            app = name
-        container_statuses = _.get('status', {}).get('containerStatuses', [])
-        ready = all([_.get('ready', False) for _ in container_statuses])
-        state = list([list(_.get('state', {}).keys())[0] for _ in container_statuses])[0]
-        image = list(set([_.get('image', None) for _ in container_statuses]))[0]
-        if state == 'terminated':
-            continue
-        if not ready:
-            warnings.append(f"{name} is not ready. state: {state}")
-            continue
-        if state != 'running':
-            warnings.append(f"{name} is not running. state: {state}")
-            continue
-        if app not in pod_summaries:
-            pod_summaries[app] = {'name': name, 'image': image}
-        else:
-            warnings.append(f"Duplicate app name: {app} {pod_summaries[app]} {name}")
-            current = pod_summaries[app]
-            pod_summaries[app] = {'names': current['name'], 'image': image}
-
-    print(yaml.dump({'pods': pod_summaries, 'warnings': warnings}, sort_keys=True))
 
 
 @cli.command('ping')
