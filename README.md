@@ -45,3 +45,7 @@ Commands:
   ping       Verify kubectl and context.
 
 ```
+## Output
+See:
+* `DATA/<context-name>/user.yaml`
+* `DATA/<context-name>/requestor.sh`
